@@ -18,7 +18,7 @@ public class PaymentResource {
     private final PaymentService paymentService;
 
     @PostMapping("/execute")
-    public void authenticateUser(@AuthenticationPrincipal UserDetails userDetails) {
+    public void executePayment(@AuthenticationPrincipal UserDetails userDetails) {
         paymentService.doPayment(userDetails.getUsername());
     }
 }
